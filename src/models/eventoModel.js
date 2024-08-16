@@ -1,3 +1,5 @@
+
+
 import conn from "../config/conn.js";
 
 const tableEventos = /*sql*/ `
@@ -9,14 +11,14 @@ const tableEventos = /*sql*/ `
         participante_id VARCHAR(60),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        
-        FOREIGN KEY (palestrante_id) REFERENCES palestrantes(palestrante_id)
+        FOREIGN KEY (palestrante_id) REFERENCES palestrantes(palestrante_id),
+        FOREIGN KEY (participante_id) REFERENCES participantes(participante_id)
     )
 `;
 
 conn.query(tableEventos, (err) => {
   if (err) {
-    console.error(err);
+    console.error("Erro ao criar a tabela de [eventos]:", err);
     return;
   }
   console.log("Tabela de [eventos] criada com sucesso");

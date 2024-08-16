@@ -1,8 +1,5 @@
 import express from "express";
-import {
-  registerPalestrante,
-  getPalestrantes,
-} from "../controllers/palestranteController.js";
+import { registerPalestrante, getPalestrantes } from "../controllers/palestranteController.js";
 
 const router = express.Router();
 

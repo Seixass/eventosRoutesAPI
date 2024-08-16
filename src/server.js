@@ -5,20 +5,21 @@ const PORT = process.env.PORT || 3333;
 
 import conn from "./config/conn.js";
 
-import "../src/models/eventoModel.js";
-import "../src/models/PalestranteModel.js";
-import "../src/models/ParticipanteModel.js";
+import "./models/palestranteModel.js";
+import "./models/participanteModel.js";
+import "./models/feedbackModel.js";  
+import "./models/eventoModel.js";
 
-import palestranteRouter from "../src/routes/palestranteRouter.js";
-import eventosRouter from "../src/routes/eventosRouter.js";
-import participanteRouter from "../src/routes/participantesRouter.js"
+import palestranteRouter from "./routes/palestranteRouter.js";
+import eventosRouter from "./routes/eventosRouter.js";
+import participantesRouter from "./routes/participantesRouter.js";
 
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/eventos", palestranteRouter, eventosRouter, participanteRouter);
+app.use("/eventos", palestranteRouter, eventosRouter, participantesRouter);
 
 app.get("", (req, res) => {
   res.send("Servidor está funcional e rodando!");

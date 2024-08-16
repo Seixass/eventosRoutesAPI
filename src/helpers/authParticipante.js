@@ -1,6 +1,6 @@
 import conn from "../config/conn.js";
 
-//tive que fazer essa desgraça no dia 3
+
 export const verificarEmailExistente = (email, callback) => {
     const sql = "SELECT * FROM participantes WHERE email = ?";
   

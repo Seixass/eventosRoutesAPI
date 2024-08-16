@@ -1,5 +1,5 @@
 import express from "express";
-import { registerParticipantes, registerParticipantesEvents} from "../controllers/participanteController.js";
+import { registerParticipantes, registerParticipantesEvents } from "../controllers/participanteController.js";
 
 const router = express.Router();
 
